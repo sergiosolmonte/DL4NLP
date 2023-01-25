@@ -177,7 +177,8 @@ def evaluate(model, test_data, hist):
     with torch.no_grad():
 
         for test_input, test_label in test_dataloader:
-
+            
+              flag=0
               
               test_label = test_label.to(device)
               mask = test_input['attention_mask'].to(device)
@@ -186,22 +187,28 @@ def evaluate(model, test_data, hist):
               output = model(input_id, mask)
               
               y_true.append(test_label.data[0].item())
-              y_true.append(test_label.data[1].item())
 
+              try:
+                y_true.append(test_label.data[1].item())
+              except:
+                    flag=1
+                    print("batch of size 1")
               #It is for bert-base-german-case (mybert)
               if hist==False:
                 
                 y_pred.append(output.argmax(dim=1)[0].item())
-                y_pred.append(output.argmax(dim=1)[1].item()) 
-                
+
+                if flag==0:
+                    y_pred.append(output.argmax(dim=1)[1].item()) 
+
                 
                 
                 if(output.argmax(dim=1)[0] == test_label[0]):
-                    
                     total_acc_class[int(test_label.data[0].item())]+=1
                     
-                if(output.argmax(dim=1)[1] == test_label[1]):
-                    total_acc_class[int(test_label.data[1].item())]+=1
+                if flag ==0:    
+                    if(output.argmax(dim=1)[1] == test_label[1]):
+                        total_acc_class[int(test_label.data[1].item())]+=1
                 
                 
                 acc = (output.argmax(dim=1) == test_label).sum().item()
