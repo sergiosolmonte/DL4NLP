@@ -1,6 +1,8 @@
 # DL4NLP
 Project on German metaphors detection with BERT  
 
+The datasets are in data/splitted_data and you can find both augmented and not augmented with the "pure" testset.
+
 Link for the trained model: https://drive.google.com/drive/folders/1LCMFoLyAjPvjaCdQo8CB58-Pg28TjM38?usp=sharing  
 
 
