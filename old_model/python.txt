@@ -1,1 +1,0 @@
-In this folder you can find all the files .py used in the first stage of this experiment. We moved to google colab because we didn't want to burn our pc.
