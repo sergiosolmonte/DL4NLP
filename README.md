@@ -2,7 +2,7 @@
 Project on German metaphors detection with BERT  
 
 Link for the trained model: https://drive.google.com/drive/folders/1LCMFoLyAjPvjaCdQo8CB58-Pg28TjM38?usp=sharing  
-Here you can find the two models, the "mybert.pkl" is a bert-base-german-cased model trained with 5 epochs and "historicalbert.pkl" is trained only with 2 epochs because we want to compare our results with another experiment.  
+
 
 Here you can find two models, both based on "bert-base-german-cased". You can use GBert8 to test our model and produce our results or you can use GBert7 as BERT head and build an optimal classifier after the BERT head. 
 
