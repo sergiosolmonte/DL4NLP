@@ -1,1 +1,1 @@
-The data in this folder are the ones used for training/validation and test. We performed data aug. only on train/val data because we want to test our models in the specified task (german metaphors) and not in the general task "find metaphors".
+The data in this folder are the ones used for training/validation and test. We perform the data aug. only on train/val data because we want to test our models with the original metaphors, not the artificial ones that the model may have already seen in the training procedure.
